@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正在跳转中...</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        p {
+            font-family: '微软雅黑';
+        }
+
+        .bak {
+            width: 400px;
+            height: 100vh;
+            margin: auto;
+        }
+
+        .cont {
+            width: 400px;
+            height: 200px;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .cont>img {
+            margin: auto;
+        }
+
+        .cont>p {
+            margin-top: 20px;
+        }
+
+        .contp {
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class=".container">
+        <div class="row bak">
+            <div class="cont">
+
+                <img src="./images/25.gif" alt="" width="50px" height="50px">
+                <p class="contp">我们正在检查您的浏览器（这个过程是自动的）</p>
+                <p id="conttime">请等待5秒</p>
+                <p>::CAPTCHA_BOX::</p>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        let conttime = document.getElementById("conttime");
+        let contval = 5;
+        
+        setInterval(function () {
+            if (contval <= 0) {
+                return;
+            }
+            contval--;
+            conttime.innerText = "请等待" + contval + "秒";
+        }, 1000)
+    </script>
+</body>
+
+</html>
