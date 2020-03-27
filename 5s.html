@@ -16,21 +16,28 @@
         }
         p {
             font-family: '微软雅黑';
+            font-size: 18px;
         }
 
         .bak {
-            width: 400px;
+            width: 80%;
             height: 100vh;
             margin: auto;
         }
 
-        .cont {
-            width: 400px;
-            height: 200px;
+        .fex {
+            height: 400px;
             position: relative;
             top: 50%;
             transform: translateY(-50%);
+        }
+        .cont {
+            width: 400px;
+            height: auto;
+            
             text-align: center;
+            margin: auto;
+            overflow: hidden;
         }
 
         .cont>img {
@@ -38,28 +45,40 @@
         }
 
         .cont>p {
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
+        /* .cont::before {
+            clear:both;
+            height:0;
+            content: "";
+            visibility: hidden;
+            overflow:hidden;
+        } */
         .contp {
-            margin-top: 20px;
+            
+        }
+        .cf {
+            text-align: center;
         }
     </style>
 
 </head>
 
 <body>
-    <div class=".container">
-        <div class="row bak">
-            <div class="cont">
+    <div class=".container bak">
+        <div class="row fex">
+            <div class="row cont">
 
                 <img src="https://i.loli.net/2020/03/27/OuPtgZmCSbEqRMT.png" alt="" width="400px">
                 <p class="contp">我们正在检查您的浏览器（这个过程是自动的）</p>
-                <p id="conttime">请等待5秒</p>
-                <p style="display: none;">::CAPTCHA_BOX::</p>
+                <p id="conttime">请等待5秒</p>  
             </div>
-
+            <div class="row">
+                <p class="cf">::CAPTCHA_BOX::</p>
+            </div>
         </div>
+        
     </div>
     <script>
         let conttime = document.getElementById("conttime");
