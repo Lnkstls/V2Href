@@ -10,10 +10,12 @@
         body {
             background-color: #f8f8f8;
         }
+
         * {
             margin: 0;
             padding: 0;
         }
+
         p {
             font-family: '微软雅黑';
             font-size: 18px;
@@ -31,9 +33,11 @@
             top: 50%;
             transform: translateY(-50%);
         }
+
         .cont {
             width: 400px;
             height: auto;
+
             text-align: center;
             margin: auto;
             overflow: hidden;
@@ -46,9 +50,7 @@
         .cont>p {
             margin-top: 10px;
         }
-        .contp {
-            
-        }
+
         .cf {
             opacity: 0;
             text-align: center;
@@ -64,18 +66,18 @@
 
                 <img src="https://i.loli.net/2020/03/27/OuPtgZmCSbEqRMT.png" alt="" width="400px">
                 <p class="contp">我们正在检查您的浏览器（这个过程是自动的）</p>
-                <p id="conttime">请等待5秒</p>  
+                <p id="conttime">请等待5秒</p>
             </div>
-            <div class="row">
-                <p class="cf">::IM_UNDER_ATTACK_BOX::</p>
+            <div class="row cf">
+                ::IM_UNDER_ATTACK_BOX::
             </div>
         </div>
-        
+
     </div>
     <script>
         let conttime = document.getElementById("conttime");
         let contval = 5;
-        
+
         setInterval(function () {
             if (contval <= 0) {
                 return;
@@ -83,6 +85,10 @@
             contval--;
             conttime.innerText = "请等待" + contval + "秒";
         }, 1000)
+        window.onload = function () {
+            let cf = document.getElementById("cf");
+            
+        }
     </script>
 </body>
 
