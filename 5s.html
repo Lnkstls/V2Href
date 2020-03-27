@@ -18,7 +18,7 @@
 
         p {
             font-family: '微软雅黑';
-            font-size: 18px;
+            font-size: 2rem;
         }
 
         .bak {
@@ -28,14 +28,13 @@
         }
 
         .fex {
-            height: 400px;
+            height: 35rem;
             position: relative;
             top: 50%;
             transform: translateY(-50%);
         }
 
         .cont {
-            width: 400px;
             height: auto;
 
             text-align: center;
@@ -47,9 +46,9 @@
             margin: auto;
         }
 
-        .cont>p {
-            margin-top: 10px;
-        }
+        /* .cont>p {
+            margin-top: 5px;
+        } */
 
         .cf {
             opacity: 0;
@@ -65,7 +64,7 @@
             <div class="row cont">
 
                 <img src="https://i.loli.net/2020/03/27/OuPtgZmCSbEqRMT.png" alt="" width="400px">
-                <p class="contp">我们正在检查您的浏览器（这个过程是自动的）</p>
+                <p class="contp" id="autoText">我们正在检查您的浏览器（这个过程是自动的）</p>
                 <p id="conttime">请等待5秒</p>
             </div>
             <div class="row cf">
@@ -76,6 +75,7 @@
     </div>
     <script>
         let conttime = document.getElementById("conttime");
+        let autoText = document.getElementById("autoText");
         let contval = 5;
 
         setInterval(function () {
@@ -85,9 +85,13 @@
             contval--;
             conttime.innerText = "请等待" + contval + "秒";
         }, 1000)
+
+
         window.onload = function () {
-            let cf = document.getElementById("cf");
-            
+            if(document.documentElement.offsetWidth < 500){
+                autoText.innerText = "我们正在检查您的浏览器\n（这个过程是自动的）";
+            }
+
         }
     </script>
 </body>
