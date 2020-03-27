@@ -45,11 +45,6 @@
         .cont>img {
             margin: auto;
         }
-
-        /* .cont>p {
-            margin-top: 5px;
-        } */
-
         .cf {
             opacity: 0;
             text-align: center;
@@ -74,25 +69,22 @@
 
     </div>
     <script>
-        let conttime = document.getElementById("conttime");
-        let autoText = document.getElementById("autoText");
-        let contval = 5;
+    <script>
+            let conttime = document.getElementById("conttime");
+            let autoText = document.getElementById("autoText");
+            let contval = 5;
 
-        setInterval(function () {
-            if (contval <= 0) {
-                return;
-            }
-            contval--;
-            conttime.innerText = "请等待" + contval + "秒";
-        }, 1000)
-
-
-        window.onload = function () {
-            if(document.documentElement.offsetWidth < 500){
+            if (document.documentElement.offsetWidth < 500) {
                 autoText.innerText = "我们正在检查您的浏览器\n（这个过程是自动的）";
             }
-
-        }
+            setInterval(function () {
+                if (contval <= 0) {
+                    return;
+                }
+                contval--;
+                conttime.innerText = "请等待" + contval + "秒";
+            }, 1000)
+    </script>
     </script>
 </body>
 
