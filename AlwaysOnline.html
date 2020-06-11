@@ -18,7 +18,7 @@
 
         p {
             font-family: '微软雅黑';
-            font-size: 1.5rem;
+            font-size: 2rem;
             letter-spacing: 3px;
         }
 
@@ -39,8 +39,10 @@
             margin: auto;
             overflow: hidden;
         }
+        
         .contp {
             margin-top: 2rem;
+            font-size: 1.5rem;
         }
         .cf {
             display: none;
@@ -52,6 +54,7 @@
         }
         .conttime {
             color: #ff3333;
+            font-size: 1.5rem;
         }
     </style>
 
@@ -61,30 +64,16 @@
     <div class=".container bak">
         <div class="row fex">
             <div class="row cont">
-                <img src="https://cdn.jsdelivr.net/gh/LnksGit/jsDelivr-images/img/cfpro/bgn.png" alt="" class="blimg" onmousedown="return false">
-                <p class="contp" id="autoText">发生未知错误</p>
+                <img src="https://cdn.jsdelivr.net/gh/LnksGit/jsDelivr-images/img/cfpro/kong.png" alt="" class="blimg" onmousedown="return false">
+                <p class="contp" id="autoText">页面未缓存</p>
                 <p class="conttime" id="conttime">请联系管理员</p>
             </div>
             <div class="row cf">
-                ::CLOUDFLARE_ERROR_1000S_BOX::
+                ::ALWAYS_ONLINE_NO_COPY_BOX::
             </div>
         </div>
 
     </div>
-    <script>
-        let browser = {
-            versions: function() {
-                let u = navigator.userAgent;
-                return {
-                    qq: u.indexOf("QQ") > -1,
-                    wechat: u.indexOf("WeChat") > -1
-                };
-            } ()
-        }
-        if (browser.versions.qq==true || browser.versions.wechat==true) {
-            document.getElementById("autoText").innerText = "浏览器不支持"
-        }
-    </script>
 </body>
 
 </html>
