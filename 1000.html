@@ -83,10 +83,10 @@
         
         let i = (() => {
             if (browser.versions.qq==true || browser.versions.wechat==true) {
-                return "换个浏览器再来吧";
+                return "浏览器不支持";
             }
             if (window.location.hostname == "rss.clapse.com") {
-                return "迷路了吗？";
+                return "未知领域";
             }
         })();
         i ? document.getElementById("autoText").innerText = i : false;
